@@ -9,6 +9,8 @@
 
         <link rel="stylesheet" href="./styles/index.css">
         <link rel="stylesheet" href="./styles/fonts.css">
+        <link rel="stylesheet" href="./styles/audio.css">
+        <script src="./src/image.js"></script>
         <link rel="icon" href="./favicon.png" type="image/png">
     </head>
     <body>
@@ -55,36 +57,175 @@
             <section class="row_section">
                 <div class="header_text_light row_section_header_background">
                     <h3>
-                        Some fact
+                        Чем я занимаюсь
                     </h3>
                 </div>
                 <div class="row_image_wrapper">
-                    <img src="./img/palette.png" alt="Some image">
+                    <img src="./img/gitlab_example.png" alt="Some image">
                 </div>
                 <article class="row_section_article">
                     <div class="article_text">
-                        <p>Приветствую! Меня зовут Владимир</p>
-                        <p>Я увлекаюсь информационными технологиями, техникой и музыкой</p>
-                        <p>Закончил Сибирский государственный университет телекоммуникаций и информатики после чего более трёх лет работал специалистом по внедрению программного обеспечения в новосибирской компании Smart Consulting</p>
-                        <p>Внедрял комплексные информационные системы, участвовал в жизненном цикле программных продуктов от согласования ТЗ до внедрения, сопровождения и эксплуатации</p>
-                        <p>Дальнейшее своё развитие я вижу в качестве DevOps-инженера как логическое развитие направления внедрения</p>
+                        <p>В качестве специалиста по внедрению программного обеспечения выполняю следующие задачи:</p>
+                        <ul>
+                            <li>Анализ корректности работы интеграций и доступности сервисов с использованием DevTools и сетевых терминальных утилит (telnet, curl, ping)</li>
+                            <li>Анализ причин багов с целью их устранения и постановки задач в команду разработки для их предотвращения в будущем</li>
+                            <li>Удалённая работа с ВМ по SSH, сбор и анализ логов системы (Linux, Bash, SSH)</li>
+                            <li>Разработка скриптов для автоматизации / выполнения массовых действий в системе на JavaScript. <a href="https://github.com/selvnv/automation_scripts">Примеры некоторых скриптов можно найти в моём репозитории</a></li>
+                            <li>Ведение базы знаний (Confluence), создание статей и руководств, обеспечение актуальности пользовательской, технической документации</li>
+                            <li>Настройка программного обеспечения (продуктов компании) и интеграций (между продуктами, а также СМЭВ, ЕСИА, ЕПГУ)</li>
+                            <li>Разработка и интеграция электронных форм услуг в <a href="https://info.gosuslugi.ru/articles/Назначение/">визуальном конструкторе услуг</a> ЕПГУ с информационными системами</li>
+                            <li>Активная работа с заказчиками, внутренними командами, техподдержкой через чаты, встречи (онлайн / офлайн)</li>
+                            <li>Обучение пользователей работе в системе</li>
+                            <li>Анализ и согласование ТЗ</li>
+                            <li>Утверждение и участие в приёмочных испытаниях по результатам внедрений</li>
+                        </ul>
+                        <p>На предыдущем месте работы: более 3-х лет опыта в роли специалиста по внедрению комплексных информационных систем. Участвовал в жизненном цикле программных продуктов от согласования ТЗ до внедрения, сопровождения и эксплуатации</p>
                     </div>
                 </article>
             </section>
             <section class="row_section">
                 <div class="header_text_light row_section_header_background">
                     <h3>
-                        Some fact
+                        Личные проекты
                     </h3>
                 </div>
-                <div class="row_image_preview_wrapper">
-
+                <article class="row_section_article">
+                    <div class="article_text">
+                        <p>В свободное время, а также для решения рабочих задач создаю небольшие проекты. Среди которых:</p>
+                        <ul>
+                            <li><a href="https://github.com/selvnv/rest_gear_bot">Telegram-бот для генерации данных</a> (Python, python-telegram-bot, интеграции с RandomVar и GigaChat, uv)</li>
+                            <li>Скрипты на JavaScript для автоматизации массовых действий (fetch, понимание Event Loop, Promise, асинхронное выполнение кода, API)</li>
+                            <li>Скрипт очистки текста от html-тегов (tkinter, regexp)</li>
+                            <li>Различные учебные проекты:</li>
+                            <ul>
+                                <li><a href="https://github.com/selvnv/simple_image_gallery">Витрина изображений</a></li>
+                                <li><a href="https://github.com/selvnv/portfolio_page">Интерактивное портфолио</a></li>
+                                <li><a href="https://gitlab.com/test_group_selv/deploy_simple_project">Конвеер CI/CD для Django-based приложения</a></li>
+                                <li><a href="https://gitlab.com/test_group_selv/test_project/-/jobs/8287884802">Сборка java-приложения с артефактами на GitLab</a></li>
+                            </ul>
+                        </ul>
+                        <p>Мой опыт:</p>
+                        <ul>
+                            <li>Практический опыт сборки образов и развертывания приложений с использованием Docker, Docker Compose (Python/Django, PostgreSQL)</li>
+                            <li>Настройка пайплайнов в GitLab CI/CD для автоматизации сборки, тестирования и деплоя. Работа с Git, артефактами</li>
+                            <li>Базовый опыт настройки и конфигурирования Nginx, понимание HTTP/HTTPS, обратного проксирования. Настройка сетевой доступности, туннелирование (SSH)</li>
+                            <li>Выполнение административных задач, работа с командной строкой, управление процессами и службами</li>
+                            <li>Использование YAML для описания Docker Compose, формирование конфигурационных файлов (nginx, системные настройки)</li>
+                            <li>Разработка скриптов для автоматизации рутинных задач: Python-бот для генерация тестовых данных, обработка файлов, скрипты для автоматизации массовых действий на JavaScript через API и DOM (например, для автоматизации проверки разработанных веб-форм с целью сокращения времени на их ревью; сбора данных для анализа; массового обновления данных), создание SQL-запросов в БД (PostgreSQL, Oracle)</li>
+                            <li>Создание технической документации и инструкций в базе знаний (Confluence)</li>
+                        </ul>
+                        <p>За время обучения и работы в целом удалось потрогать различные технологии: C/C++, Python, JavaScript. Docker, Git (GitLab, GitHub), CI/CD, Linux, SQL, API, СМЭВ, XML, JSON, YAML, Freemarker и Apache Velocity (со стороны разработки самих шаблонов с использованием их синтаксиса), Jira, Confluence</p>
+                    </div>
+                </article>
+                <div class="row_image_wrapper">
+                    <img src="./img/bot_tg.png" alt="Some image">
+                </div>
+            </section>
+            <section class="row_section">
+                <div class="header_text_light row_section_header_background">
+                    <h3>
+                        Обложки треков
+                    </h3>
                 </div>
                 <div class="row_image_list">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
+                    <div class="single_image_wrapper">
+                        <img clas src="./img/cover_surrender.jpg" alt="Cover image for track Surrender">
+                    </div>
+                    <div class="single_image_wrapper">
+                        <img src="./img/cover_rain.jpg" alt="Cover image for track Rain">
+                    </div>
+                    <div class="single_image_wrapper">
+                        <img src="./img/cover_crazy_for_love.jpg" alt="Cover image for track Crazy for Love">
+                    </div>
+                    <div class="single_image_wrapper">
+                        <img src="./img/cover_reflection.jpg" alt="Cover image for track Reflection">
+                    </div>
+                    <div class="single_image_wrapper">
+                        <img src="./img/cover_sunlight.jpg" alt="Cover image for track Луч солнца золотого">
+                    </div>
+                    <div class="single_image_wrapper">
+                        <img src="./img/cover_1743.jpg" alt="Cover image for track 1743">
+                    </div>
+
+                    <div class="single_image_wrapper">
+                        <img src="./img/cover_crossroad.jpg" alt="Cover image for track Crossroad">
+                    </div>
+                </div>
+                <div class="row_image_preview_wrapper">
+                    <img src="./img/cover_reflection.jpg" alt="">
+                </div>
+            </section>
+            <section class="row_section">
+                <div class="simple-audio-playlist">
+                    <div class="header_text_light">
+                        <h3 class="playlist-title">Моя музыка</h3>
+                    </div>
+
+                    <div class="track">
+                        <div class="track-header">
+                            <span class="track-number">01</span>
+                            <h4 class="track-title">Surrender</h4>
+                            <span class="track-duration">4:12</span>
+                        </div>
+                        <audio controls class="audio-player">
+                            <source src="./audio/Surrender.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
+
+                    <div class="track">
+                        <div class="track-header">
+                            <span class="track-number">02</span>
+                            <h4 class="track-title">Rain</h4>
+                            <span class="track-duration">3:53</span>
+                        </div>
+                        <audio controls class="audio-player">
+                            <source src="./audio/Rain.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
+
+                    <div class="track">
+                        <div class="track-header">
+                            <span class="track-number">03</span>
+                            <h4 class="track-title">1743</h4>
+                            <span class="track-duration">3:00</span>
+                        </div>
+                        <audio controls class="audio-player">
+                            <source src="./audio/1743.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
+
+                    <div class="track">
+                        <div class="track-header">
+                            <span class="track-number">04</span>
+                            <h4 class="track-title">Луч солнца золотого</h4>
+                            <span class="track-duration">2:26</span>
+                        </div>
+                        <audio controls class="audio-player">
+                            <source src="./audio/Луч солнца золотого.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
+
+                    <div class="track">
+                        <div class="track-header">
+                            <span class="track-number">05</span>
+                            <h4 class="track-title">Crossroad</h4>
+                            <span class="track-duration">3:31</span>
+                        </div>
+                        <audio controls class="audio-player">
+                            <source src="./audio/Crossroad.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
+
+                    <div class="track">
+                        <div class="track-header">
+                            <span class="track-number">06</span>
+                            <h4 class="track-title">Crazy for Love</h4>
+                            <span class="track-duration">2:32</span>
+                        </div>
+                        <audio controls class="audio-player">
+                            <source src="./audio/Crazy for Love.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
                 </div>
             </section>
             <section class="row_section">
@@ -103,7 +244,7 @@
                     </div>
                 </article>
                 <div class="row_image_wrapper">
-                    <img src="./img/palette.png" alt="Some image">
+                    <img src="./img/bot_repo_example.png" alt="Some image">
                 </div>
             </section>
 

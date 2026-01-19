@@ -599,3 +599,10 @@ a:hover {
 .full_screen_image_wrapper:hover {
     border: none;
 }
+
+/* Адаптация текста под узкие экраны */
+@media (max-width: 999px) {
+    .row_section_article {
+        width: 100%;
+    }
+}

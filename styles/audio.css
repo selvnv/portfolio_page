@@ -93,3 +93,10 @@
 .simple_audio_playlist .header_text_light {
     width: 100%;
 }
+
+@media (max-width: 700px) {
+    .simple_audio_playlist .track {
+        width: 100%;
+        max-width: 100%;
+    }
+}

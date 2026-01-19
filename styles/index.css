@@ -625,3 +625,9 @@ a:hover {
         max-width: 100%;
     }
 }
+
+@media (max-width: 440px) {
+    .single_image_wrapper {
+        width: 80%;
+    }
+}

@@ -574,3 +574,28 @@ a:hover {
     font-weight: bold;
     color: #fff;
 }
+
+.full_screen_image_wrapper {
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    transition: background-color 0.3s;
+    z-index: 1;
+}
+
+.full_screen_image_wrapper img {
+    width: auto;
+}
+
+.full_screen_image_wrapper:hover {
+    border: none;
+}

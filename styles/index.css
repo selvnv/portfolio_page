@@ -448,7 +448,8 @@ a:hover {
     padding-left: 0;
 }
 
-.article_text > ul > li {
+.article_text > ul > li,
+.about_me_links_background > ul > li {
     padding: 10px 15px; /* Отступы внутреннего контента */
     margin-bottom: 8px;
     background: linear-gradient( /* Исходный фон */
@@ -469,7 +470,8 @@ a:hover {
 }
 
 /* Анимация градиента слева направо */
-.article_text > ul:not(.blocks) > li:hover::after {
+.article_text > ul:not(.blocks) > li:hover::after,
+.about_me_links_background > ul:not(.blocks) > li:hover::after {
     content: '';
     position: absolute;
     top: 0;

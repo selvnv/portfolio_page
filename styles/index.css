@@ -448,7 +448,7 @@ a:hover {
     padding-left: 0;
 }
 
-.article_text ul li {
+.article_text > ul > li {
     padding: 10px 15px; /* Отступы внутреннего контента */
     margin-bottom: 8px;
     background: linear-gradient( /* Исходный фон */
@@ -460,8 +460,16 @@ a:hover {
     overflow: hidden; /* Cкрывает выходящую за пределы анимацию градиента */
 }
 
+.article_text > ul > li > ul > li {
+    padding: 10px 15px;
+    margin-bottom: 4px;
+    margin-top: 4px;
+    position: relative;
+    overflow: hidden;
+}
+
 /* Анимация градиента слева направо */
-.article_text ul:not(.blocks) li:hover::after {
+.article_text > ul:not(.blocks) > li:hover::after {
     content: '';
     position: absolute;
     top: 0;

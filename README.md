@@ -30,6 +30,74 @@
 
 **Flex (Flexbox)** — один из модулей CSS, основная задача которого — продвинутое позиционирование элементов.
 
+### Автоматизация развертывания на VPS
+
+#### Создание ключа для подключения к VPS по SSH
+
+Создать ключ для подключения
+```bash
+ssh-keygen -C "github deploy key" -f ~/.ssh/github_deploy
+```
+
+Скопировать публичный ключ на сервер
+```bash
+# Если подключение к серверу по паролю
+ssh-copy-id -i ~/.ssh/github_deploy -p port user@server
+
+# Если подключение к серверу возможно только по ssh-ключу
+cat ~/.ssh/github_deploy.pub | ssh -i ~/.ssh/vps_key -p port user@server "cat >> ~/.ssh/authorized_keys"
+```
+
+#### Создание секретов в удаленном репозитории (GitHub)
+
+Перейти в настройки репозитория → Secrets and variables → Actions
+
+Добавить секреты:
+- VPS_HOST - IP-адрес или доменное имя для подключения к серверу
+- VPS_PORT - порт, на котором работает служба SSH
+- VPS_USER - пользователь для подключения к серверу
+- VPS_SSH_KEY - содержимое приватного ключа `github_deploy` 
+
+
+#### Описание пайплайна GitHub Actions
+
+Так как в репозитории находится только статика, то деплой можно выполнить в один этап, состоящий из:
+- Скачивания содержимого репозитория на раннер
+- Синхронизации скачанных файлов с файлами на сервере (VPS)
+
+Все пайплайны для GitHub Actions описываются каталоге `.github/workflows` в формате `YAML`
+
+Шаг 1. Скачать код из репозитория на раннер
+```yaml
+- name: checkout code
+  uses: actions/checkout@v4
+```
+
+Шаг 2. Сохранение приватного ключа в файл для подключения к серверу
+```yaml
+- name: setup ssh key
+  run: |
+    mkdir -p ~/.ssh/ && \
+    echo "${{ secrets.VPS_SSH_KEY }}" > ~/.ssh/github_deploy && \
+    chmod 600 ~/.ssh/github_deploy && \
+    ssh-keyscan -p ${{ secrets.VPS_PORT }} ${{ secrets.VPS_HOST }} >> ~/.ssh/known_hosts
+```
+
+Содержимое переменной `secrets.VPS_SSH_KEY` будет сохранено в файл с корректными правами. Также сервер будет сохранен в `~/.ssh/known_hosts`, чтобы не требовалось ручное подтверждения при подключении по SSH
+
+Шаг 3. Синхронизации статики на сервере со статикой раннера (из репозитория)
+```yaml
+- name: sync static files
+  run: |
+    rsync -avz --delete \
+    -e "ssh -p ${{ secrets.VPS_PORT }} -i ~/.ssh/github_deploy" \
+    --exclude ".git" \
+    --exclude ".github" \
+    --exclude ".nojekyll" \
+    --exclude ".gitignore" \
+    ./ ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/var/www/portfolio_page/
+```
+
 ### Ссылки
 - [Мета-теги](https://doka.guide/html/meta/)
 - [Блочные и строчные элементы разметки HTML](https://developer.mozilla.org/ru/docs/Learn_web_development/Core/Styling_basics/Box_model)

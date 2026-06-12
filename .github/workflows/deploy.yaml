@@ -1,8 +1,8 @@
 name: Deploy Portfolio Static
 on:
   push:
-    branches:
-      - main
+    tags:
+      - v*.*.*
 
 jobs:
   deploy:

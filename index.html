@@ -1,428 +1,161 @@
 <!DOCTYPE html>
-<html lang="ru">
-    <head>
-        <!-- Указывает браузеру, какую кодировку символов использовать для отображения текста на странице -->
-        <meta charset="UTF-8">
-        <!-- Задаёт параметры окна просмотра в браузере. Ширина = ширине устройства. Масштаб 100% -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portfolio</title>
+<html lang="ru" data-theme="terminal">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Владимир — Портфолио</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Michroma&family=Jura:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Press+Start+2P&family=Fira+Code:wght@400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
 
-        <link rel="stylesheet" href="./styles/index.css">
-        <link rel="stylesheet" href="./styles/fonts.css">
-        <link rel="stylesheet" href="./styles/audio.css">
-        <script src="./src/image.js"></script>
-        <link rel="icon" href="./favicon.png" type="image/png">
-    </head>
-    <body>
-        <div class="main_content">
-            <section class="about_me">
-                <div class="section_header_wrapper">
-                    <div class="section_header_box header_text_light">
-                        <h2>
-                            Мой профиль
-                        </h2>
-                    </div>
-                </div>
-                <div class="about_me_image_wrapper">
-                    <img class="about_me_profile_image" src="./img/profile_image.png" alt="profile image">
-                </div>
-                <article class="article_about_me">
-                    <div class="header_text_light about_me_header_background">
-                        <h2 class="header_content">Обо мне</h2>
-                    </div>
-                    <div class="article_text">
-                        <p>Приветствую! Меня зовут Владимир</p>
-                        <p>Я увлекаюсь информационными технологиями, техникой и музыкой</p>
-                        <p>Закончил Сибирский государственный университет телекоммуникаций и информатики после чего более трёх лет работал специалистом по внедрению программного обеспечения в новосибирской компании Smart Consulting</p>
-                        <p>Внедрял комплексные информационные системы, участвовал в жизненном цикле программных продуктов от согласования ТЗ до внедрения, сопровождения и эксплуатации</p>
-                        <p>Мне интересны направление системного администрирования и DevOps</p>
-                    </div>
-                </article>
-                <div class="about_me_links article_text">
-                    <div class="about_me_links_background">
-                        <div>
-                            <div class="header_text_light about_me_header_background">
-                                <h3 class="header_content">
-                                    Мои ссылки
-                                </h3>
-                            </div>
-                        </div>
-                        <ul>
-                            <li><a href="https://github.com/selvnv">GitHub</a></li>
-                            <li><a href="https://gitlab.com/test_group_selv">GitLab</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            <section class="row_section">
-                <div class="header_text_light row_section_header_background">
-                    <h3 class="header_content">
-                        Чем я занимаюсь
-                    </h3>
-                </div>
-                <div class="row_image_wrapper">
-                    <img src="./img/gitlab_example.png" alt="Some image">
-                </div>
-                <article class="row_section_article">
-                    <div class="article_text">
-                        <p>В качестве специалиста по внедрению программного обеспечения выполняю следующие задачи:</p>
-                        <ul>
-                            <li>Диагностика сетевой доступности виртуальных машин и сервисов (telnet, curl, ping)</li>
-                            <li>Подключение к хостам по SSH, передача файлов через SCP, проброс портов</li>
-                            <li>Сбор и анализ логов приложений, выявление и устранение проблем в работе ПО</li>
-                            <li>Диагностика ресурсов и управление службами (ps, top, systemctl)</li>
-                            <li>Обработка обращений заказчика (2-я линия поддержки)</li>
-                            <li>Настройка интеграций продуктов компании (внутренние и внешние API)</li>
-                            <li>Управление конфигурациями приложений</li>
-                            <li>Автоматизация бизнес-процессов при настройке информационных систем
-                                <ul>
-                                    <li>Разработал скрипт для парсинга JSON и валидации форм госуслуг → сократил время проверки с 30 минут до 1 минуты на форму</li>
-                                    <li>Разработал скрипт массового обновления сущностей в системе → сократил время с 5–10 часов до 1 минуты</li>
-                                </ul>
-                            </li>
-                            <li>Анализ и согласование технических заданий (ТЗ)</li>
-                            <li>Ведение технической и пользовательской документации в Confluence</li>
-                            <li>Утверждение и участие в приёмочных испытаниях по результатам внедрений</li>
-                            <li>Взаимодействие с командами разработки и представителями заказчика при решении инцидентов</li>
-                            <li>Обучение пользователей работе в системе</li>
-                        </ul>
-                        <p>На предыдущем месте работы: более 3-х лет опыта в роли специалиста по внедрению комплексных информационных систем. Участвовал в жизненном цикле программных продуктов от согласования ТЗ до внедрения, сопровождения и эксплуатации</p>
-                    </div>
-                </article>
-            </section>
-            <section class="row_section">
-                <div class="header_text_light row_section_header_background">
-                    <h3 class="header_content">
-                        Личные проекты
-                    </h3>
-                </div>
-                <article class="row_section_article">
-                    <div class="article_text">
-                        <p>В свободное время, а также для решения рабочих задач создаю небольшие проекты. Среди которых:</p>
-                        <ul>
-                            <li><a href="https://github.com/selvnv/subscribe_job_rss">Получение рассылки о новых вакансиях на hh.ru по заданным фильтрам</a>.
-                                <ul>
-                                    <li>Используется RSS-лента hh.ru;</li>
-                                    <li>Пользовательское взаимодействие осуществляется через Telegram-бота;</li>
-                                    <li>Управление приложением через CLI</li>
-                                </ul>
-                            </li>
-                            <li><a href="https://github.com/selvnv/birthdate-alert">Напоминание о днях рождения в Telegram</a>.
-                                <ul>
-                                    <li>Интерфейс командной строки на Python click;</li>
-                                    <li>Запуск настраивается по кроне;</li>
-                                    <li>Для хранения данных используется база данных sqlite3</li>
-                                </ul>
-                            <li><a href="https://github.com/selvnv/rest_gear_bot">Telegram-бот для генерации данных</a>.
-                                <ul>
-                                    <li>Бот разработан на основе библиотеки python-telegram-bot;</li>
-                                    <li>Разработаны интеграции с GigaChat и RandomVar;</li>
-                                    <li>Управление приложением через CLI</li>
-                                </ul>
-                            </li>
-                            <li><a href="https://github.com/selvnv/chat_bot">CLI-Chatbot</a> с интеграцией с API GigaChat</li>
-                            <li><a href="https://github.com/selvnv/sql_queries/tree/main/product_star_tasks/project_bi">Запуск необходимых сервисов и создание</a> дашбордов в Metabase (SQL, Docker)</li>
-                            <li>Скрипты на JavaScript для автоматизации массовых действий (fetch, понимание Event Loop, Promise, асинхронное выполнение кода, API)</li>
-                            <li>Различные учебные проекты:
-                                <ul>
-                                    <li><a href="https://github.com/selvnv/simple_image_gallery">Витрина изображений</a></li>
-                                    <li><a href="https://github.com/selvnv/portfolio_page">Интерактивное портфолио (HTML, CSS, JavaScript)</a></li>
-                                    <li><a href="https://github.com/selvnv/animated_timer">Анимированный таймер (HTML canvas, Bootstrap, JavaScript)</a></li>
-                                    <li><a href="https://gitlab.com/test_group_selv/deploy_simple_project">Конвеер CI/CD для Django-based приложения</a></li>
-                                    <li><a href="https://gitlab.com/test_group_selv/test_project/-/jobs/8287884802">Сборка java-приложения с артефактами на GitLab</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </article>
-                <div class="row_image_wrapper">
-                    <img src="./img/edb.gif" alt="Some image">
-                </div>
-            </section>
-            <section class="row_section">
-                <div class="header_text_light row_section_header_background">
-                    <h3 class="header_content">
-                        Мой опыт
-                    </h3>
-                </div>
-                <article class="row_section_article">
-                    <div class="article_text">
-                        <p>Мой опыт:</p>
-                        <ul>
-                            <li>Практический опыт сборки образов и развертывания приложений с использованием Docker, Docker Compose (Python/Django, PostgreSQL)</li>
-                            <li>Настройка пайплайнов в GitLab CI/CD для автоматизации сборки, тестирования и деплоя. Работа с Git, артефактами</li>
-                            <li>Базовый опыт настройки и конфигурирования Nginx, понимание HTTP/HTTPS, обратного проксирования. Настройка сетевой доступности, туннелирование (SSH)</li>
-                            <li>Выполнение административных задач, работа с командной строкой, управление процессами и службами</li>
-                            <li>Использование YAML для описания Docker Compose, формирование конфигурационных файлов (nginx, системные настройки)</li>
-                            <li>Разработка скриптов для автоматизации рутинных задач: Python-бот для генерация тестовых данных, обработка файлов, скрипты для автоматизации массовых действий на JavaScript через API и DOM (например, для автоматизации проверки разработанных веб-форм с целью сокращения времени на их ревью; сбора данных для анализа; массового обновления данных), создание SQL-запросов в БД (PostgreSQL, Oracle)</li>
-                            <li>Создание технической документации и инструкций в базе знаний (Confluence)</li>
-                        </ul>
-                        <p>За время обучения и работы в целом удалось потрогать различные технологии: C/C++, Python, JavaScript. Docker, Git (GitLab, GitHub), CI/CD, Linux, SQL, API, СМЭВ, XML, JSON, YAML, Freemarker и Apache Velocity (со стороны разработки самих шаблонов с использованием их синтаксиса), Jira, Confluence</p>
-                    </div>
-                </article>
-                <div class="row_image_wrapper">
-                    <img src="./img/subjob_bot.png" alt="Some image">
-                </div>
-            </section>
-            <section class="row_section">
-                <div class="header_text_light row_section_header_background">
-                    <h3 class="header_content">
-                        Самообучение
-                    </h3>
-                </div>
-                <div class="row_image_wrapper">
-                    <img src="./img/web_example.png" alt="Some image">
-                </div>
-                <article class="row_section_article">
-                    <div class="article_text">
-                        <p>Постоянно обучаюсь чему-то новому. Некоторые курсы, которые я закончил или прохожу для саморазвития на данный момент:</p>
-                        <ul class="timeline">
-                            <li>
-                                <span class="date">Предполагаемая дата завершения: 2026</span>
-                                <span class="title">ProductStar</span>
-                                <p>Профессия: Python-разработчик</p>
-                            </li>
-                            <li>
-                                <span class="date">Предполагаемая дата завершения: 2026</span>
-                                <span class="title">Purple School</span>
-                                <p>Основы Git</p>
-                            </li>
-                            <li>
-                                <span class="date">Предполагаемая дата завершения: 2026</span>
-                                <span class="title">Purple School</span>
-                                <p>Bash скрипты</p>
-                            </li>
-                            <li>
-                                <span class="date">Предполагаемая дата завершения: 2026</span>
-                                <span class="title">Purple School</span>
-                                <p>Docker и Ansible</p>
-                            </li>
-                            <li>
-                                <span class="date">Завершён: 2025</span>
-                                <span class="title">Purple School</span>
-                                <p>Основы Linux</p>
-                            </li>
-                            <li>
-                                <span class="date">Завершён: 2025</span>
-                                <span class="title">SQLAcademy</span>
-                                <p>Курс по SQL</p>
-                            </li>
-                        </ul>
-                    </div>
-                </article>
-            </section>
-            <section class="row_section">
-                <div class="header_text_light row_section_header_background">
-                    <h3 class="header_content">
-                        Навыки
-                    </h3>
-                </div>
-                <article class="row_section_article">
-                    <div class="article_text">
-                        <p>Навыки среднего уровня:</p>
-                        <ul class="blocks">
-                            <li>Linux</li>
-                            <li>Docker</li>
-                            <li>Python</li>
-                            <li>Git</li>
-                            <li>Bash</li>
-                            <li>SQL</li>
-                            <li>Atlassian Jira</li>
-                            <li>Atlassian Confluence</li>
-                            <li>HTML + CSS</li>
-                            <li>JavaScript</li>
-                            <li>CI/CD</li>
-                        </ul>
-                        <p>Навыки базового уровня:</p>
-                        <ul class="blocks">
-                            <li>Nginx</li>
-                            <li>Kubernetes</li>
-                            <li>React</li>
-                        </ul>
-                    </div>
-                </article>
-                <div class="row_image_wrapper">
-                    <img src="./img/dashboard_demo.gif" alt="Some image">
-                </div>
-            </section>
-            <section class="row_section">
-                <div class="header_text_light row_section_header_background">
-                    <h3 class="header_content">
-                        Опыт работы
-                    </h3>
-                </div>
-                <div class="row_image_wrapper">
-                    <img src="./img/sc.png" alt="Some image">
-                </div>
-                <article class="row_section_article">
-                    <div class="article_text">
-                        <ul class="timeline">
-                            <li>
-                                <span class="date">2023.01-2025.12</span>
-                                <span class="title">Smart Consulting</span>
-                                <p>Специалист по внедрению программного обеспечения</p>
-                            </li>
-                        </ul>
-                    </div>
-                </article>
-            </section>
-            <section class="row_section">
-                <div class="header_text_light row_section_header_background">
-                    <h3 class="header_content">
-                        Мои сертификаты
-                    </h3>
-                </div>
-                <div class="row_image_list">
-                    <div class="single_image_wrapper">
-                        <img clas src="./img/linux_basics.png" alt="Linux basics certificate">
-                    </div>
-                    <div class="single_image_wrapper">
-                        <img src="./img/sqlacademy.png" alt="SQL Academy certificate">
-                    </div>
-                    <div class="single_image_wrapper">
-                        <img src="./img/fullstack_spec_cert.jpg" alt="Product Star Fullstack Specialization certificate">
-                    </div>
-                </div>
-                <div class="row_image_preview_wrapper">
-                    <img src="./img/fullstack_spec_cert.jpg" alt="">
-                </div>
-            </section>
-            <section class="row_section">
-                <div class="header_text_light row_section_header_background">
-                    <h3 class="header_content">
-                        Про музыку
-                    </h3>
-                </div>
-                <article class="row_section_article">
-                    <div class="article_text">
-                        <p>Помимо информационных технологий я увлекаюсь музыкой в различном её проявлении</p>
-                        <p>В основном мне нравится писать свои треки, экспериментируя с жанрами и сочетаниями различных тембров. При создании треков использую Ableton Live</p>
-                        <p>Иногда играю на фортепиано и акустической/электро-гитаре, что позволяет мне свободнее создавать</p>
-                        <p>Часто используемые VST-плагины и оборудование:</p>
-                        <ul>
-                            <li>Xfer Serum</li>
-                            <li>Native Instruments Kontakt (The Grandeur, Noire, Stradivari Violin, Damage, Cloud Supply и другие библиотеки)</li>
-                            <li>Valhalla Supermassive, FabFilter Pro-Q 4, Pro-C 2 и Pro-L 2, LFO Tool, Ozone, Spaced Out и другие плагины обработки</li>
-                            <li>Гитарный процессор Hotone Ampero Mini</li>
-                            <li>Цифровое фортепиано Casio PX-S1000</li>
-                            <li>Электрогитара Epiphone Les Paul Standard 60s</li>
-                        </ul>
-                    </div>
-                </article>
-                <div class="row_image_wrapper">
-                    <img src="./img/ableton.png" alt="Some image">
-                </div>
-            </section>
-            <section class="row_section">
-                <div class="simple_audio_playlist">
-                    <div class="header_text_light">
-                        <h3 class="playlist_title header_content">Мои музыкальные работы</h3>
-                    </div>
+  <!-- Theme Switcher -->
+  <nav class="theme-switcher" aria-label="Переключение темы оформления">
+    <span class="theme-switcher__label">Тема:</span>
+    <div class="theme-switcher__btns">
+      <button data-theme="neumorph"   class="theme-btn" title="Neumorphism">◉</button>
+      <button data-theme="neumorph-dark" class="theme-btn" title="Neumorphism Dark">◈</button>
+      <button data-theme="liquid-glass" class="theme-btn" title="Liquid Glass">◒</button>
+      <button data-theme="cyberpunk"  class="theme-btn" title="Cyberpunk">⬡</button>
+      <button data-theme="terminal"   class="theme-btn active" title="CLI Terminal + Liquid Glass">▷</button>
+    </div>
+  </nav>
 
-                    <div class="track">
-                        <div class="track_header">
-                            <span class="track_number">01</span>
-                            <h4 class="track_title">Surrender</h4>
-                            <span class="track_duration">4:12</span>
-                        </div>
-                        <audio controls class="audio_player">
-                            <source src="./audio/Surrender.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-
-                    <div class="track">
-                        <div class="track_header">
-                            <span class="track_number">02</span>
-                            <h4 class="track_title">Rain</h4>
-                            <span class="track_duration">3:53</span>
-                        </div>
-                        <audio controls class="audio_player">
-                            <source src="./audio/Rain.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-
-                    <div class="track">
-                        <div class="track_header">
-                            <span class="track_number">03</span>
-                            <h4 class="track_title">1743</h4>
-                            <span class="track_duration">3:00</span>
-                        </div>
-                        <audio controls class="audio_player">
-                            <source src="./audio/1743.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-
-                    <div class="track">
-                        <div class="track_header">
-                            <span class="track_number">04</span>
-                            <h4 class="track_title">Луч солнца золотого</h4>
-                            <span class="track_duration">2:26</span>
-                        </div>
-                        <audio controls class="audio_player">
-                            <source src="./audio/Луч солнца золотого.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-
-                    <div class="track">
-                        <div class="track_header">
-                            <span class="track_number">05</span>
-                            <h4 class="track_title">Crossroad</h4>
-                            <span class="track_duration">3:31</span>
-                        </div>
-                        <audio controls class="audio_player">
-                            <source src="./audio/Crossroad.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-
-                    <div class="track">
-                        <div class="track_header">
-                            <span class="track_number">06</span>
-                            <h4 class="track_title">Crazy for Love</h4>
-                            <span class="track_duration">2:32</span>
-                        </div>
-                        <audio controls class="audio_player">
-                            <source src="./audio/Crazy for Love.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
-            </section>
-            <section class="row_section">
-                <div class="header_text_light row_section_header_background">
-                    <h3 class="header_content">
-                        Обложки моих музыкальных работ
-                    </h3>
-                </div>
-                <div class="row_image_list">
-                    <div class="single_image_wrapper">
-                        <img clas src="./img/cover_surrender.jpg" alt="Cover image for track Surrender">
-                    </div>
-                    <div class="single_image_wrapper">
-                        <img src="./img/cover_rain.jpg" alt="Cover image for track Rain">
-                    </div>
-                    <div class="single_image_wrapper">
-                        <img src="./img/cover_crazy_for_love.jpg" alt="Cover image for track Crazy for Love">
-                    </div>
-                    <div class="single_image_wrapper">
-                        <img src="./img/cover_reflection.jpg" alt="Cover image for track Reflection">
-                    </div>
-                    <div class="single_image_wrapper">
-                        <img src="./img/cover_sunlight.jpg" alt="Cover image for track Луч солнца золотого">
-                    </div>
-                    <div class="single_image_wrapper">
-                        <img src="./img/cover_1743.jpg" alt="Cover image for track 1743">
-                    </div>
-
-                    <div class="single_image_wrapper">
-                        <img src="./img/cover_crossroad.jpg" alt="Cover image for track Crossroad">
-                    </div>
-                </div>
-                <div class="row_image_preview_wrapper">
-                    <img src="./img/cover_reflection.jpg" alt="">
-                </div>
-            </section>
+  <!-- ===== GLASS PANEL ===== -->
+  <div class="glass-panel">
+    <!-- ===== HERO ===== -->
+    <header class="hero" id="hero">
+      <div class="hero__inner container">
+        <img class="hero__img" id="hero-img" alt="profile image">
+        <div class="hero__text">
+          <h1 class="hero__name" id="hero-name"></h1>
+          <p class="hero__sub">Специалист по внедрению ПО • DevOps-энтузиаст • Музыкант</p>
+          <div class="hero__links" id="hero-links"></div>
         </div>
-        <footer>
+      </div>
+    </header>
 
-        </footer>
-    </body>
+    <!-- ===== ABOUT ===== -->
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section__title" id="about-title"></h2>
+        <div class="about__content" id="about-content"></div>
+      </div>
+    </section>
+
+    <!-- ===== WHAT I DO ===== -->
+    <section class="section" id="whatido">
+      <div class="container">
+        <h2 class="section__title" id="whatido-title"></h2>
+        <p class="whatido__intro" id="whatido-intro"></p>
+        <div class="whatido__tasks" id="whatido-tasks"></div>
+        <p class="whatido__outro" id="whatido-outro"></p>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <h2 class="section__title" id="projects-title"></h2>
+        <p class="projects__intro" id="projects-intro"></p>
+        <div class="projects__list" id="projects-list"></div>
+      </div>
+    </section>
+
+    <!-- ===== EXPERIENCE ===== -->
+    <section class="section" id="experience">
+      <div class="container">
+        <h2 class="section__title" id="experience-title"></h2>
+        <p class="experience__intro" id="experience-intro"></p>
+        <ul class="experience__list" id="experience-list"></ul>
+        <p class="experience__outro" id="experience-outro"></p>
+      </div>
+    </section>
+
+    <!-- ===== LEARNING ===== -->
+    <section class="section" id="learning">
+      <div class="container">
+        <h2 class="section__title" id="learning-title"></h2>
+        <p class="learning__intro" id="learning-intro"></p>
+        <div class="learning__courses" id="learning-courses"></div>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section class="section" id="skills">
+      <div class="container">
+        <h2 class="section__title" id="skills-title"></h2>
+        <div class="skills__grid" id="skills-grid"></div>
+      </div>
+    </section>
+
+    <!-- ===== WORK HISTORY ===== -->
+    <section class="section" id="workhistory">
+      <div class="container">
+        <h2 class="section__title" id="workhistory-title"></h2>
+        <div class="workhistory__list" id="workhistory-list"></div>
+      </div>
+    </section>
+
+    <!-- ===== CERTIFICATES ===== -->
+    <section class="section" id="certificates">
+      <div class="container">
+        <h2 class="section__title" id="certs-title"></h2>
+        <div class="certs__grid" id="certs-grid"></div>
+      </div>
+    </section>
+
+    <!-- ===== PLAYLIST ===== -->
+    <section class="section" id="playlist">
+      <div class="container">
+        <h2 class="section__title" id="playlist-title"></h2>
+        <div class="playlist__desc" id="playlist-desc"></div>
+        <div class="playlist__tracks" id="playlist-tracks"></div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p>&copy; 2026 unlog!c</p>
+      </div>
+    </footer>
+  </div><!-- /glass-panel -->
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" aria-label="Закрыть">&times;</button>
+    <img class="lightbox__img" id="lightbox-img" alt="">
+  </div>
+
+  <!-- ===== AUDIO PLAYER ===== -->
+  <div class="audio-bar" id="audio-bar" aria-hidden="true">
+    <div class="audio-bar__inner container">
+      <span class="audio-bar__track-title" id="audio-track-title"></span>
+      <div class="ap" id="audio-player-ui">
+        <button class="ap__play" aria-label="Play/Pause">
+          <svg class="ap__icon ap__icon--play" viewBox="0 0 24 24" width="20" height="20"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+          <svg class="ap__icon ap__icon--pause" viewBox="0 0 24 24" width="20" height="20"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" fill="currentColor"/></svg>
+        </button>
+        <span class="ap__time ap__time--current" id="ap-current">0:00</span>
+        <div class="ap__progress" id="ap-progress">
+          <div class="ap__progress-fill" id="ap-progress-fill"></div>
+          <input type="range" class="ap__progress-input" id="ap-progress-input" min="0" max="1000" value="0" step="1" aria-label="Прогресс">
+        </div>
+        <span class="ap__time ap__time--total" id="ap-total">0:00</span>
+        <div class="ap__volume">
+          <span class="ap__volume-icon" id="ap-volume-icon">🔊</span>
+          <input type="range" class="ap__volume-input" id="ap-volume-input" min="0" max="100" value="100" step="1" aria-label="Громкость">
+        </div>
+      </div>
+      <audio id="audio-player"></audio>
+      <button class="audio-bar__close" aria-label="Закрыть плеер">&times;</button>
+    </div>
+  </div>
+
+  <script src="info.js"></script>
+  <script src="js/main.js"></script>
+</body>
 </html>

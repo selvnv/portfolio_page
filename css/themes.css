@@ -1,0 +1,1282 @@
+/* ================================================================
+   portfolio — css/themes.css
+   4 темы: neumorph | cyberpunk | terminal | liquid-glass
+   ================================================================ */
+
+/* ================================================================
+   THEME 1: NEUMORPHISM
+   ================================================================ */
+[data-theme="neumorph"] {
+  --c-bg: #e8e9ee;
+  --c-bg-alt: #dde0e5;
+  --c-surface: #e8e9ee;
+  --c-surface-hover: #dfe2e8;
+  --c-border: transparent;
+  --c-text: #3a3d4a;
+  --c-text-secondary: #7c7f8b;
+  --c-accent: #6c5ce7;
+  --c-accent-secondary: #5a4bd1;
+  --c-shadow: none;
+  --ff-body: "Jura", "Inter", sans-serif;
+  --ff-heading: "Michroma", "Jura", sans-serif;
+  --ff-mono: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+  --radius: 20px;
+  --radius-sm: 14px;
+  --ease-neumorph: 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+[data-theme="neumorph"] body {
+  background: #e8e9ee;
+}
+
+[data-theme="neumorph"] body::after {
+  content: "";
+  position: fixed;
+  inset: -20%;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at 35% 25%, rgba(255, 255, 255, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 65% 75%, rgba(108, 92, 231, 0.04) 0%, transparent 50%),
+    linear-gradient(120deg, transparent 35%, rgba(255, 255, 255, 0.04) 45%, transparent 55%);
+  background-size: 200% 200%;
+  animation: neumorph-glass-sweep 18s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes neumorph-glass-sweep {
+  0%   { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+[data-theme="neumorph"] body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: radial-gradient(ellipse at 50% 30%, rgba(108, 92, 231, 0.04) 0%, transparent 60%);
+  background-size: 100% 100%;
+  animation: neumorph-float 20s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes neumorph-float {
+  0%   { background-position: 30% 20%; }
+  100% { background-position: 70% 80%; }
+}
+
+[data-theme="neumorph"] .section {
+  border-bottom: none;
+  padding: 32px 0;
+}
+
+[data-theme="neumorph"] .section__title {
+  color: #3a3d4a;
+}
+
+[data-theme="neumorph"] .hero__img {
+  border-radius: 50%;
+  border: none;
+  box-shadow: 8px 8px 16px #c8cad1, -8px -8px 16px #ffffff;
+}
+
+[data-theme="neumorph"] .hero__name {
+  color: #3a3d4a;
+}
+
+[data-theme="neumorph"] .hero__link {
+  background: #e8e9ee;
+  border: none;
+  color: #3a3d4a;
+  box-shadow: 4px 4px 8px #c8cad1, -4px -4px 8px #ffffff, inset 0 0 0 transparent, inset 0 0 0 transparent;
+  border-radius: 12px;
+  transition: box-shadow var(--ease-neumorph), color var(--ease-neumorph);
+}
+
+[data-theme="neumorph"] .hero__link:hover {
+  box-shadow: 0 0 0 transparent, 0 0 0 transparent, inset 4px 4px 8px #c8cad1, inset -4px -4px 8px #ffffff;
+  color: var(--c-accent);
+}
+
+[data-theme="neumorph"] .whatido__list > li,
+[data-theme="neumorph"] .proj__item,
+[data-theme="neumorph"] .experience__list li,
+[data-theme="neumorph"] .course-card,
+[data-theme="neumorph"] .wh__item,
+[data-theme="neumorph"] .track-card {
+  background: #e8e9ee;
+  border: none;
+  box-shadow: 5px 5px 10px #c8cad1, -5px -5px 10px #ffffff, inset 0 0 0 transparent, inset 0 0 0 transparent;
+  transition: box-shadow var(--ease-neumorph);
+}
+
+[data-theme="neumorph"] .whatido__list > li:hover,
+[data-theme="neumorph"] .proj__item:hover,
+[data-theme="neumorph"] .experience__list li:hover,
+[data-theme="neumorph"] .course-card:hover,
+[data-theme="neumorph"] .wh__item:hover,
+[data-theme="neumorph"] .track-card:hover {
+  box-shadow: 0 0 0 transparent, 0 0 0 transparent, inset 3px 3px 6px #c8cad1, inset -3px -3px 6px #ffffff;
+}
+
+[data-theme="neumorph"] .skill-tag {
+  background: #e8e9ee;
+  border: none;
+  color: #3a3d4a;
+  box-shadow: 3px 3px 6px #c8cad1, -3px -3px 6px #ffffff, inset 0 0 0 transparent, inset 0 0 0 transparent;
+  transition: box-shadow var(--ease-neumorph), color var(--ease-neumorph);
+}
+
+[data-theme="neumorph"] .skill-tag:hover {
+  box-shadow: 0 0 0 transparent, 0 0 0 transparent, inset 3px 3px 6px #c8cad1, inset -3px -3px 6px #ffffff;
+  color: var(--c-accent);
+}
+
+[data-theme="neumorph"] .theme-switcher {
+  background: #e8e9ee;
+  border: none;
+  box-shadow: 4px 4px 8px #c8cad1, -4px -4px 8px #ffffff;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition: all var(--ease-neumorph);
+}
+
+[data-theme="neumorph"] .theme-btn {
+  transition: all var(--ease-neumorph);
+}
+
+[data-theme="neumorph"] .theme-btn:hover {
+  background: #dfe2e8;
+}
+
+[data-theme="neumorph"] .theme-btn.active {
+  box-shadow: inset 3px 3px 6px #c8cad1, inset -3px -3px 6px #ffffff;
+  border: none;
+  color: var(--c-accent);
+  background: #e8e9ee;
+}
+
+[data-theme="neumorph"] .cert-card {
+  box-shadow: 4px 4px 8px #c8cad1, -4px -4px 8px #ffffff;
+  border: none;
+  border-radius: 14px;
+  transition: all var(--ease-neumorph);
+}
+
+[data-theme="neumorph"] .audio-bar {
+  background: #e8e9ee;
+  border-top: none;
+  box-shadow: 0 -8px 16px #c8cad1;
+}
+
+[data-theme="neumorph"] .audio-bar__track-title {
+  color: #3a3d4a;
+  font-weight: 600;
+}
+
+[data-theme="neumorph"] .audio-bar__close {
+  background: #e8e9ee;
+  border: none;
+  color: #7c7f8b;
+  box-shadow: 3px 3px 6px #c8cad1, -3px -3px 6px #ffffff, inset 0 0 0 transparent, inset 0 0 0 transparent;
+  transition: box-shadow var(--ease-neumorph), color var(--ease-neumorph);
+}
+
+[data-theme="neumorph"] .audio-bar__close:hover {
+  box-shadow: 0 0 0 transparent, 0 0 0 transparent, inset 3px 3px 6px #c8cad1, inset -3px -3px 6px #ffffff;
+  color: #6c5ce7;
+}
+
+[data-theme="neumorph"] .ap {
+  background: #e8e9ee;
+  border: none;
+  border-radius: 14px;
+  padding: 4px 14px;
+  box-shadow: inset 3px 3px 6px #c8cad1, inset -3px -3px 6px #ffffff;
+}
+
+[data-theme="neumorph"] .ap__play {
+  color: #3a3d4a;
+  transition: color var(--ease-neumorph);
+}
+
+[data-theme="neumorph"] .ap__play:hover {
+  color: #6c5ce7;
+}
+
+[data-theme="neumorph"] .ap__time {
+  color: #7c7f8b;
+}
+
+[data-theme="neumorph"] .ap__progress {
+  background: #dde0e5;
+  border-radius: 7px;
+  box-shadow: inset 2px 2px 4px #c8cad1, inset -2px -2px 4px #ffffff;
+}
+
+[data-theme="neumorph"] .ap__progress-fill {
+  background: #6c5ce7;
+  border-radius: 7px;
+}
+
+[data-theme="neumorph"] .ap__volume-input {
+  accent-color: #6c5ce7;
+}
+
+/* ================================================================
+   THEME 2b: NEUMORPHISM DARK
+   ================================================================ */
+[data-theme="neumorph-dark"] {
+  --c-bg: #121214;
+  --c-bg-alt: #18181c;
+  --c-surface: #1e1e22;
+  --c-surface-hover: #26262c;
+  --c-border: transparent;
+  --c-text: #d4d4d8;
+  --c-text-secondary: #8a8a96;
+  --c-accent: #a0a0b0;
+  --c-accent-secondary: #888898;
+  --c-shadow: none;
+  --ff-body: "Jura", "Inter", sans-serif;
+  --ff-heading: "Michroma", "Jura", sans-serif;
+  --ff-mono: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+  --radius: 20px;
+  --radius-sm: 14px;
+  --ease-neumorph: 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+[data-theme="neumorph-dark"] body {
+  background: #121214;
+}
+
+[data-theme="neumorph-dark"] body::after {
+  content: "";
+  position: fixed;
+  inset: -20%;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at 35% 25%, rgba(160, 160, 176, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 65% 75%, rgba(180, 180, 196, 0.03) 0%, transparent 50%),
+    linear-gradient(120deg, transparent 35%, rgba(255, 255, 255, 0.02) 45%, transparent 55%);
+  background-size: 200% 200%;
+  animation: neumorph-glass-sweep 18s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+[data-theme="neumorph-dark"] body::before {
+  content: none;
+}
+
+[data-theme="neumorph-dark"] .section {
+  border-bottom: none;
+  padding: 32px 0;
+}
+
+[data-theme="neumorph-dark"] .section__title {
+  color: #d4d4d8;
+}
+
+[data-theme="neumorph-dark"] .hero__img {
+  border-radius: 50%;
+  border: none;
+  box-shadow: 8px 8px 16px #0a0a0d, -4px -4px 8px #2c2c34;
+}
+
+[data-theme="neumorph-dark"] .hero__name {
+  color: #d4d4d8;
+}
+
+[data-theme="neumorph-dark"] .hero__link {
+  background: #121214;
+  border: none;
+  color: #d4d4d8;
+  box-shadow: 4px 4px 8px #0a0a0d, -2px -2px 4px #2c2c34, inset 0 0 0 transparent, inset 0 0 0 transparent;
+  border-radius: 12px;
+  transition: box-shadow var(--ease-neumorph), color var(--ease-neumorph);
+}
+
+[data-theme="neumorph-dark"] .hero__link:hover {
+  box-shadow: 0 0 0 transparent, 0 0 0 transparent, inset 4px 4px 8px #0a0a0d, inset -2px -2px 4px #2c2c34;
+  color: var(--c-accent);
+}
+
+[data-theme="neumorph-dark"] .whatido__list > li,
+[data-theme="neumorph-dark"] .proj__item,
+[data-theme="neumorph-dark"] .experience__list li,
+[data-theme="neumorph-dark"] .course-card,
+[data-theme="neumorph-dark"] .wh__item,
+[data-theme="neumorph-dark"] .track-card {
+  background: #121214;
+  border: none;
+  box-shadow: 5px 5px 10px #0a0a0d, -3px -3px 5px #2c2c34, inset 0 0 0 transparent, inset 0 0 0 transparent;
+  transition: box-shadow var(--ease-neumorph);
+}
+
+[data-theme="neumorph-dark"] .whatido__list > li:hover,
+[data-theme="neumorph-dark"] .proj__item:hover,
+[data-theme="neumorph-dark"] .experience__list li:hover,
+[data-theme="neumorph-dark"] .course-card:hover,
+[data-theme="neumorph-dark"] .wh__item:hover,
+[data-theme="neumorph-dark"] .track-card:hover {
+  box-shadow: 0 0 0 transparent, 0 0 0 transparent, inset 3px 3px 6px #0a0a0d, inset -2px -2px 3px #2c2c34;
+}
+
+[data-theme="neumorph-dark"] .skill-tag {
+  background: #121214;
+  border: none;
+  color: #d4d4d8;
+  box-shadow: 3px 3px 6px #0a0a0d, -2px -2px 3px #2c2c34, inset 0 0 0 transparent, inset 0 0 0 transparent;
+  transition: box-shadow var(--ease-neumorph), color var(--ease-neumorph);
+}
+
+[data-theme="neumorph-dark"] .skill-tag:hover {
+  box-shadow: 0 0 0 transparent, 0 0 0 transparent, inset 3px 3px 6px #0a0a0d, inset -2px -2px 3px #2c2c34;
+  color: var(--c-accent);
+}
+
+[data-theme="neumorph-dark"] .theme-switcher {
+  background: #121214;
+  border: none;
+  box-shadow: 4px 4px 8px #0a0a0d, -2px -2px 4px #2c2c34;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition: all var(--ease-neumorph);
+}
+
+[data-theme="neumorph-dark"] .theme-btn {
+  transition: all var(--ease-neumorph);
+  color: #8a8a96;
+}
+
+[data-theme="neumorph-dark"] .theme-btn:hover {
+  background: #26262c;
+}
+
+[data-theme="neumorph-dark"] .theme-btn.active {
+  box-shadow: inset 3px 3px 6px #0a0a0d, inset -2px -2px 3px #2c2c34;
+  border: none;
+  color: var(--c-accent);
+  background: #121214;
+}
+
+[data-theme="neumorph-dark"] .cert-card {
+  box-shadow: 4px 4px 8px #0a0a0d, -2px -2px 4px #2c2c34;
+  border: none;
+  border-radius: 14px;
+  transition: all var(--ease-neumorph);
+}
+
+[data-theme="neumorph-dark"] .audio-bar {
+  background: #121214;
+  border-top: none;
+  box-shadow: 0 -8px 16px #0a0a0d;
+}
+
+[data-theme="neumorph-dark"] .audio-bar__track-title {
+  color: #d4d4d8;
+  font-weight: 600;
+}
+
+[data-theme="neumorph-dark"] .audio-bar__close {
+  background: #121214;
+  border: none;
+  color: #8a8a96;
+  box-shadow: 3px 3px 6px #0a0a0d, -2px -2px 3px #2c2c34, inset 0 0 0 transparent, inset 0 0 0 transparent;
+  transition: box-shadow var(--ease-neumorph), color var(--ease-neumorph);
+}
+
+[data-theme="neumorph-dark"] .audio-bar__close:hover {
+  box-shadow: 0 0 0 transparent, 0 0 0 transparent, inset 3px 3px 6px #0a0a0d, inset -2px -2px 3px #2c2c34;
+  color: var(--c-accent);
+}
+
+[data-theme="neumorph-dark"] .ap {
+  background: #121214;
+  border: none;
+  border-radius: 14px;
+  padding: 4px 14px;
+  box-shadow: inset 3px 3px 6px #0a0a0d, inset -2px -2px 3px #2c2c34;
+}
+
+[data-theme="neumorph-dark"] .ap__play {
+  color: #d4d4d8;
+  transition: color var(--ease-neumorph);
+}
+
+[data-theme="neumorph-dark"] .ap__play:hover {
+  color: var(--c-accent);
+}
+
+[data-theme="neumorph-dark"] .ap__time {
+  color: #8a8a96;
+}
+
+[data-theme="neumorph-dark"] .ap__progress {
+  background: #18181c;
+  border-radius: 7px;
+  box-shadow: inset 2px 2px 4px #0a0a0d, inset -1px -1px 2px #2c2c34;
+}
+
+[data-theme="neumorph-dark"] .ap__progress-fill {
+  background: var(--c-accent);
+  border-radius: 7px;
+}
+
+[data-theme="neumorph-dark"] .ap__volume-input {
+  accent-color: var(--c-accent);
+}
+
+/* ================================================================
+   THEME 3: CYBERPUNK / NEON
+   ================================================================ */
+[data-theme="cyberpunk"] {
+  --c-bg: #0a0a0f;
+  --c-bg-alt: #0f0f1a;
+  --c-surface: rgba(0, 255, 255, 0.04);
+  --c-surface-hover: rgba(0, 255, 255, 0.1);
+  --c-border: rgba(0, 255, 255, 0.2);
+  --c-text: #d4f4ff;
+  --c-text-secondary: #7ba5b8;
+  --c-accent: #00ffff;
+  --c-accent-secondary: #ff00ff;
+  --c-shadow: rgba(0, 255, 255, 0.15);
+  --ff-body: "Fira Code", "JetBrains Mono", monospace;
+  --ff-heading: "Press Start 2P", "Space Grotesk", monospace;
+  --ff-mono: "Fira Code", "JetBrains Mono", monospace;
+  --radius: 0px;
+  --radius-sm: 0px;
+}
+
+[data-theme="cyberpunk"] body {
+  background: #0a0a0f;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 255, 255, 0.02) 2px,
+      rgba(0, 255, 255, 0.02) 4px
+    );
+}
+
+[data-theme="cyberpunk"] .section {
+  border-bottom: 1px solid rgba(0, 255, 255, 0.15);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+}
+
+[data-theme="cyberpunk"] .section__title {
+  font-family: "Press Start 2P", monospace;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  color: #00ffff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.6), 0 0 30px rgba(0, 255, 255, 0.3);
+  letter-spacing: 0.05em;
+}
+
+[data-theme="cyberpunk"] .hero__img {
+  border-radius: 2px;
+  border: 2px solid #00ffff;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4), inset 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+[data-theme="cyberpunk"] .hero__name {
+  font-family: "Press Start 2P", monospace;
+  font-size: 1.6rem;
+  color: #00ffff;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+}
+
+[data-theme="cyberpunk"] .hero__link {
+  border: 1px solid #ff00ff;
+  color: #ff00ff;
+  background: rgba(255, 0, 255, 0.05);
+  text-shadow: 0 0 6px rgba(255, 0, 255, 0.5);
+  clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%);
+}
+
+[data-theme="cyberpunk"] .hero__link:hover {
+  background: #ff00ff;
+  color: #000;
+  text-shadow: none;
+  box-shadow: 0 0 24px rgba(255, 0, 255, 0.6);
+}
+
+[data-theme="cyberpunk"] .whatido__list > li,
+[data-theme="cyberpunk"] .proj__item,
+[data-theme="cyberpunk"] .experience__list li,
+[data-theme="cyberpunk"] .course-card,
+[data-theme="cyberpunk"] .wh__item,
+[data-theme="cyberpunk"] .track-card {
+  background: rgba(0, 255, 255, 0.03);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%);
+}
+
+[data-theme="cyberpunk"] .whatido__list > li:hover,
+[data-theme="cyberpunk"] .proj__item:hover,
+[data-theme="cyberpunk"] .track-card:hover {
+  border-color: #00ffff;
+  box-shadow: 0 0 16px rgba(0, 255, 255, 0.2), inset 0 0 16px rgba(0, 255, 255, 0.05);
+  background: rgba(0, 255, 255, 0.07);
+}
+
+[data-theme="cyberpunk"] .skill-tag {
+  background: rgba(255, 0, 255, 0.08);
+  border: 1px solid #ff00ff;
+  color: #ff00ff;
+  text-shadow: 0 0 4px rgba(255, 0, 255, 0.4);
+  clip-path: polygon(4px 0, 100% 0, calc(100% - 4px) 100%, 0 100%);
+}
+
+[data-theme="cyberpunk"] .skill-tag:hover {
+  background: #ff00ff;
+  color: #000;
+  text-shadow: none;
+  box-shadow: 0 0 16px rgba(255, 0, 255, 0.5);
+}
+
+[data-theme="cyberpunk"] .theme-switcher {
+  background: rgba(10, 10, 15, 0.9);
+  border: 1px solid #00ffff;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+[data-theme="cyberpunk"] .theme-btn.active {
+  border-color: #ff00ff;
+  color: #ff00ff;
+  background: rgba(255, 0, 255, 0.15);
+  box-shadow: 0 0 12px rgba(255, 0, 255, 0.4);
+}
+
+[data-theme="cyberpunk"] .audio-bar {
+  background: #0a0a0f;
+  border-top: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+[data-theme="cyberpunk"] .audio-bar__track-title {
+  color: #00ffff;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+  font-family: "Fira Code", "JetBrains Mono", monospace;
+}
+
+[data-theme="cyberpunk"] .audio-bar__close {
+  border: 1px solid #ff00ff;
+  color: #ff00ff;
+  background: rgba(255, 0, 255, 0.08);
+  border-radius: 0;
+  clip-path: polygon(4px 0, 100% 0, calc(100% - 4px) 100%, 0 100%);
+  text-shadow: 0 0 4px rgba(255, 0, 255, 0.5);
+}
+
+[data-theme="cyberpunk"] .audio-bar__close:hover {
+  background: #ff00ff;
+  color: #000;
+  text-shadow: none;
+  box-shadow: 0 0 16px rgba(255, 0, 255, 0.5);
+}
+
+[data-theme="cyberpunk"] .ap {
+  background: #0a0a0f;
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 0;
+  padding: 4px 10px;
+  clip-path: polygon(4px 0, 100% 0, calc(100% - 4px) 100%, 0 100%);
+}
+
+[data-theme="cyberpunk"] .ap__play {
+  color: #00ffff;
+  text-shadow: 0 0 6px rgba(0, 255, 255, 0.5);
+}
+
+[data-theme="cyberpunk"] .ap__play:hover {
+  color: #ff00ff;
+  text-shadow: 0 0 8px rgba(255, 0, 255, 0.6);
+}
+
+[data-theme="cyberpunk"] .ap__time {
+  color: #00ffff;
+  text-shadow: 0 0 4px rgba(0, 255, 255, 0.4);
+  font-family: "Fira Code", "JetBrains Mono", monospace;
+}
+
+[data-theme="cyberpunk"] .ap__progress {
+  background: rgba(0, 255, 255, 0.08);
+  border-radius: 0;
+}
+
+[data-theme="cyberpunk"] .ap__progress-fill {
+  background: linear-gradient(90deg, #00ffff, #ff00ff);
+  border-radius: 0;
+}
+
+[data-theme="cyberpunk"] .ap__volume-input {
+  accent-color: #ff00ff;
+}
+
+/* ================================================================
+   THEME 4: CLI TERMINAL + LIQUID GLASS (GLASSMORPHISM)
+   Переливающийся фон, стеклянные карточки, моноширинный шрифт,
+   промпты $, blink-курсор, стилизованный скроллбар
+   ================================================================ */
+[data-theme="terminal"] {
+  --c-bg: transparent;
+  --c-bg-alt: rgba(10, 10, 18, 0.6);
+  --c-surface: rgba(255, 255, 255, 0.04);
+  --c-surface-hover: rgba(255, 255, 255, 0.09);
+  --c-border: rgba(255, 255, 255, 0.1);
+  --c-text: #c9d1d9;
+  --c-text-secondary: #8b949e;
+  --c-accent: #3fb950;
+  --c-accent-secondary: #2ea043;
+  --c-shadow: rgba(0, 0, 0, 0.4);
+  --ff-body: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+  --ff-heading: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+  --ff-mono: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+  --radius: 14px;
+  --radius-sm: 10px;
+}
+
+/* ---------- TERMINAL: анимированный переливающийся фон ---------- */
+
+[data-theme="terminal"] body {
+  background: #0a0a12;
+}
+
+[data-theme="terminal"] body::before {
+  content: "";
+  position: fixed;
+  inset: -30%;
+  z-index: -2;
+  background: radial-gradient(ellipse at 35% 35%, #09131a 0%, #070c12 40%, #03080c 100%);
+  background-size: 300% 300%;
+  animation: terminal-bg-shift 14s ease-in-out infinite alternate;
+}
+
+[data-theme="terminal"] body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(ellipse at 30% 20%, rgba(63, 185, 80, 0.10) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 80%, rgba(100, 160, 255, 0.08) 0%, transparent 60%),
+              radial-gradient(ellipse at 50% 50%, rgba(180, 100, 255, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+@keyframes terminal-bg-shift {
+  0%   { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+/* ---------- TERMINAL: стеклянные карточки ---------- */
+
+[data-theme="terminal"] .whatido__list > li,
+[data-theme="terminal"] .proj__item,
+[data-theme="terminal"] .experience__list li,
+[data-theme="terminal"] .course-card,
+[data-theme="terminal"] .wh__item,
+[data-theme="terminal"] .track-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  transition: all 0.35s ease;
+}
+
+[data-theme="terminal"] .whatido__list > li:hover,
+[data-theme="terminal"] .proj__item:hover,
+[data-theme="terminal"] .experience__list li:hover,
+[data-theme="terminal"] .course-card:hover,
+[data-theme="terminal"] .wh__item:hover,
+[data-theme="terminal"] .track-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(63, 185, 80, 0.35);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 20px rgba(63, 185, 80, 0.08);
+  transform: translateY(-1px);
+}
+
+[data-theme="terminal"] .skill-tag {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  border: 1px solid rgba(63, 185, 80, 0.2);
+  color: #c9d1d9;
+}
+
+[data-theme="terminal"] .skill-tag:hover {
+  border-color: #3fb950;
+  color: #3fb950;
+  background: rgba(63, 185, 80, 0.1);
+  box-shadow: 0 0 12px rgba(63, 185, 80, 0.15);
+}
+
+/* ---------- TERMINAL: промпты перед заголовками ---------- */
+
+[data-theme="terminal"] .section__title {
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 1.45rem;
+  color: #3fb950;
+  font-weight: 500;
+}
+
+[data-theme="terminal"] .section__title::before {
+  content: "visitor@portfolio:~$ ";
+  color: #6e7681;
+  font-weight: 400;
+}
+
+[data-theme="terminal"] .section__title::after {
+  content: "_";
+  color: #3fb950;
+  animation: terminal-blink 0.9s step-end infinite;
+  margin-left: 2px;
+}
+
+@keyframes terminal-blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
+
+/* ---------- TERMINAL: hero ---------- */
+
+[data-theme="terminal"] .hero__img {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+}
+
+[data-theme="terminal"] .hero__name {
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 2rem;
+  color: #c9d1d9;
+  font-weight: 600;
+}
+
+[data-theme="terminal"] .hero__name::before {
+  content: "> ";
+  color: #3fb950;
+  font-weight: 500;
+}
+
+[data-theme="terminal"] .hero__link {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #58a6ff;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 0.82rem;
+}
+
+[data-theme="terminal"] .hero__link:hover {
+  background: rgba(88, 166, 255, 0.1);
+  border-color: #58a6ff;
+  color: #79c0ff;
+  box-shadow: 0 0 16px rgba(88, 166, 255, 0.15);
+}
+
+[data-theme="terminal"] .hero__sub {
+  color: #6e7681;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 0.85rem;
+}
+
+/* ---------- TERMINAL: theme switcher ---------- */
+
+[data-theme="terminal"] .theme-switcher {
+  background: rgba(10, 10, 18, 0.7);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="terminal"] .theme-btn.active {
+  border-color: #3fb950;
+  color: #3fb950;
+  background: rgba(63, 185, 80, 0.1);
+}
+
+/* ---------- TERMINAL: scrollbar ---------- */
+
+[data-theme="terminal"] ::-webkit-scrollbar {
+  width: 8px;
+}
+
+[data-theme="terminal"] ::-webkit-scrollbar-track {
+  background: rgba(10, 10, 18, 0.8);
+}
+
+[data-theme="terminal"] ::-webkit-scrollbar-thumb {
+  background: rgba(63, 185, 80, 0.3);
+  border-radius: 4px;
+}
+
+[data-theme="terminal"] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(63, 185, 80, 0.5);
+}
+
+/* ---------- TERMINAL: audio bar ---------- */
+
+[data-theme="terminal"] .audio-bar {
+  background: rgba(10, 10, 18, 0.8);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="terminal"] .audio-bar__track-title {
+  color: #3fb950;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-weight: 500;
+}
+
+[data-theme="terminal"] .audio-bar__track-title::before {
+  content: "♫ ";
+  color: #6e7681;
+}
+
+[data-theme="terminal"] .audio-bar__close {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #8b949e;
+}
+
+[data-theme="terminal"] .audio-bar__close:hover {
+  border-color: #3fb950;
+  color: #3fb950;
+  background: rgba(63, 185, 80, 0.1);
+  box-shadow: 0 0 12px rgba(63, 185, 80, 0.15);
+}
+
+[data-theme="terminal"] .ap {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 4px 12px;
+}
+
+[data-theme="terminal"] .ap__play {
+  color: #c9d1d9;
+}
+
+[data-theme="terminal"] .ap__play:hover {
+  color: #3fb950;
+  text-shadow: 0 0 6px rgba(63, 185, 80, 0.4);
+}
+
+[data-theme="terminal"] .ap__time {
+  color: #8b949e;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+}
+
+[data-theme="terminal"] .ap__progress {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+
+[data-theme="terminal"] .ap__progress-fill {
+  background: #3fb950;
+  border-radius: 3px;
+  box-shadow: 0 0 6px rgba(63, 185, 80, 0.3);
+}
+
+[data-theme="terminal"] .ap__volume-input {
+  accent-color: #3fb950;
+}
+
+/* ---------- TERMINAL: footer ---------- */
+
+[data-theme="terminal"] .footer {
+  color: #6e7681;
+}
+
+/* ================================================================
+   THEME 5: LIQUID GLASS (DARK)
+   Сверхпрозрачное тёмное стекло, холодные сине-белые огни
+   Современные шрифты Space Grotesk + Inter
+   ================================================================ */
+[data-theme="liquid-glass"] {
+  --c-bg: #0c0d14;
+  --c-bg-alt: rgba(255, 255, 255, 0.04);
+  --c-surface: rgba(255, 255, 255, 0.04);
+  --c-surface-hover: rgba(255, 255, 255, 0.08);
+  --c-border: rgba(255, 255, 255, 0.08);
+  --c-text: #e2e4e9;
+  --c-text-secondary: #8b8fa5;
+  --c-accent: #7390c8;
+  --c-accent-secondary: #5d6f8a;
+  --c-shadow: rgba(0, 0, 0, 0.3);
+  --ff-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ff-heading: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --ff-mono: "JetBrains Mono", "Fira Code", monospace;
+  --radius: 28px;
+  --radius-sm: 20px;
+}
+
+/* ---------- LIQUID GLASS: фон — холодные огни на тёмном ---------- */
+
+[data-theme="liquid-glass"] body {
+  background: #0c0d14;
+}
+
+[data-theme="liquid-glass"] body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(255, 255, 255, 0.08) 0%, transparent 10%),
+    radial-gradient(circle at 55% 8%, rgba(140, 160, 200, 0.07) 0%, transparent 12%),
+    radial-gradient(circle at 85% 18%, rgba(255, 255, 255, 0.06) 0%, transparent 9%),
+    radial-gradient(circle at 10% 52%, rgba(140, 160, 200, 0.06) 0%, transparent 10%),
+    radial-gradient(circle at 90% 48%, rgba(255, 255, 255, 0.06) 0%, transparent 9%),
+    radial-gradient(circle at 48% 58%, rgba(140, 160, 200, 0.05) 0%, transparent 11%),
+    radial-gradient(circle at 22% 88%, rgba(255, 255, 255, 0.07) 0%, transparent 10%),
+    radial-gradient(circle at 58% 92%, rgba(140, 160, 200, 0.06) 0%, transparent 11%),
+    radial-gradient(circle at 82% 82%, rgba(255, 255, 255, 0.06) 0%, transparent 9%),
+    radial-gradient(circle at 38% 38%, rgba(140, 160, 200, 0.04) 0%, transparent 8%),
+    radial-gradient(circle at 68% 62%, rgba(255, 255, 255, 0.07) 0%, transparent 8%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 20%);
+  background-size: 200% 200%;
+  animation: lights-drift-1 22s ease-in-out infinite;
+  pointer-events: none;
+}
+
+[data-theme="liquid-glass"] body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 68% 22%, rgba(255, 255, 255, 0.07) 0%, transparent 8%),
+    radial-gradient(circle at 28% 78%, rgba(140, 160, 200, 0.05) 0%, transparent 8%),
+    radial-gradient(circle at 58% 42%, rgba(255, 255, 255, 0.06) 0%, transparent 7%),
+    radial-gradient(circle at 12% 28%, rgba(140, 160, 200, 0.05) 0%, transparent 7%),
+    radial-gradient(circle at 78% 72%, rgba(255, 255, 255, 0.06) 0%, transparent 8%);
+  background-size: 200% 200%;
+  animation: lights-drift-2 18s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes lights-drift-1 {
+  0%   { background-position: 0% 0%; opacity: 0.6; }
+  25%  { background-position: 40% 20%; opacity: 0.85; }
+  50%  { background-position: 70% 50%; opacity: 0.55; }
+  75%  { background-position: 25% 75%; opacity: 0.8; }
+  100% { background-position: 0% 0%; opacity: 0.6; }
+}
+
+@keyframes lights-drift-2 {
+  0%   { background-position: 100% 100%; opacity: 0.4; }
+  25%  { background-position: 65% 75%; opacity: 0.7; }
+  50%  { background-position: 35% 35%; opacity: 0.45; }
+  75%  { background-position: 85% 18%; opacity: 0.65; }
+  100% { background-position: 100% 100%; opacity: 0.4; }
+}
+
+/* ---------- LIQUID GLASS: единая стеклянная панель ---------- */
+
+[data-theme="liquid-glass"] .glass-panel {
+  max-width: var(--max-width);
+  margin: 24px auto 32px;
+  padding: 24px 16px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+}
+
+/* ---------- LIQUID GLASS: секции (без стекла) ---------- */
+
+[data-theme="liquid-glass"] .section {
+  border-bottom: none;
+  padding: 28px 0;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-radius: 0;
+  margin: 0;
+  border: none;
+  box-shadow: none;
+}
+
+[data-theme="liquid-glass"] .section__title {
+  font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #e2e4e9;
+  text-transform: uppercase;
+}
+
+/* ---------- LIQUID GLASS: карточки — pressed-in (neumorph-dark) ---------- */
+
+[data-theme="liquid-glass"] .whatido__list > li,
+[data-theme="liquid-glass"] .proj__item,
+[data-theme="liquid-glass"] .experience__list li,
+[data-theme="liquid-glass"] .course-card,
+[data-theme="liquid-glass"] .wh__item,
+[data-theme="liquid-glass"] .track-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.35), -2px -2px 5px rgba(255, 255, 255, 0.03), inset 0 0 0 transparent, inset 0 0 0 transparent;
+  border-radius: 20px;
+  transition: box-shadow 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+[data-theme="liquid-glass"] .whatido__list > li:hover,
+[data-theme="liquid-glass"] .proj__item:hover,
+[data-theme="liquid-glass"] .experience__list li:hover,
+[data-theme="liquid-glass"] .course-card:hover,
+[data-theme="liquid-glass"] .wh__item:hover,
+[data-theme="liquid-glass"] .track-card:hover {
+  box-shadow: 0 0 0 transparent, 0 0 0 transparent, inset 4px 4px 8px rgba(0, 0, 0, 0.45), inset -2px -2px 4px rgba(255, 255, 255, 0.04);
+}
+
+/* ---------- LIQUID GLASS: skill-tag — pressed-in ---------- */
+
+[data-theme="liquid-glass"] .skill-tag {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  color: #a8b4cc;
+  border-radius: 14px;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), -2px -2px 3px rgba(255, 255, 255, 0.03), inset 0 0 0 transparent, inset 0 0 0 transparent;
+  transition: box-shadow 0.7s cubic-bezier(0.25, 0.1, 0.25, 1), color 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+[data-theme="liquid-glass"] .skill-tag:hover {
+  box-shadow: 0 0 0 transparent, 0 0 0 transparent, inset 3px 3px 6px rgba(0, 0, 0, 0.4), inset -2px -2px 3px rgba(255, 255, 255, 0.04);
+  color: #7390c8;
+}
+
+/* ---------- LIQUID GLASS: hero ---------- */
+
+[data-theme="liquid-glass"] .hero {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-radius: 0;
+  margin: 0;
+  border: none;
+  box-shadow: none;
+}
+
+[data-theme="liquid-glass"] .hero__img {
+  border-radius: 50%;
+  border: none;
+  box-shadow: 8px 8px 16px #06070a, -4px -4px 8px #1e1f2a;
+}
+
+[data-theme="liquid-glass"] .hero__name {
+  font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #e2e4e9;
+}
+
+[data-theme="liquid-glass"] .hero__sub {
+  color: #8b8fa5;
+  font-weight: 400;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  letter-spacing: 0.01em;
+}
+
+[data-theme="liquid-glass"] .hero__link {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  color: #7390c8;
+  font-weight: 500;
+  border-radius: 14px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3), -2px -2px 4px rgba(255, 255, 255, 0.03), inset 0 0 0 transparent, inset 0 0 0 transparent;
+  transition: box-shadow 0.7s cubic-bezier(0.25, 0.1, 0.25, 1), color 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+[data-theme="liquid-glass"] .hero__link:hover {
+  box-shadow: 0 0 0 transparent, 0 0 0 transparent, inset 4px 4px 8px rgba(0, 0, 0, 0.4), inset -2px -2px 4px rgba(255, 255, 255, 0.04);
+  color: #88a6dd;
+}
+
+/* ---------- LIQUID GLASS: theme switcher ---------- */
+
+[data-theme="liquid-glass"] .theme-switcher {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="liquid-glass"] .theme-btn {
+  border: none;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), -1px -1px 2px rgba(255, 255, 255, 0.04);
+  transition: all 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+[data-theme="liquid-glass"] .theme-btn:hover {
+  box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.3), inset -1px -1px 2px rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="liquid-glass"] .theme-btn.active {
+  border: none;
+  color: #7390c8;
+  background: rgba(115, 144, 200, 0.1);
+  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.4), inset -2px -2px 3px rgba(255, 255, 255, 0.04);
+}
+
+/* ---------- LIQUID GLASS: cert card — pressed-in ---------- */
+
+[data-theme="liquid-glass"] .cert-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  border-radius: 18px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.35), -2px -2px 5px rgba(255, 255, 255, 0.03), inset 0 0 0 transparent, inset 0 0 0 transparent;
+  transition: all 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+[data-theme="liquid-glass"] .cert-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 transparent, 0 0 0 transparent, inset 4px 4px 8px rgba(0, 0, 0, 0.4), inset -2px -2px 4px rgba(255, 255, 255, 0.04);
+}
+
+/* ---------- LIQUID GLASS: audio bar ---------- */
+
+[data-theme="liquid-glass"] .audio-bar {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="liquid-glass"] .audio-bar__track-title {
+  color: #e2e4e9;
+  font-weight: 500;
+}
+
+[data-theme="liquid-glass"] .audio-bar__close {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  color: #8b8fa5;
+  border-radius: 14px;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), -2px -2px 3px rgba(255, 255, 255, 0.03), inset 0 0 0 transparent, inset 0 0 0 transparent;
+  transition: box-shadow 0.7s cubic-bezier(0.25, 0.1, 0.25, 1), color 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+[data-theme="liquid-glass"] .audio-bar__close:hover {
+  box-shadow: 0 0 0 transparent, 0 0 0 transparent, inset 3px 3px 6px rgba(0, 0, 0, 0.4), inset -2px -2px 3px rgba(255, 255, 255, 0.04);
+  color: #7390c8;
+}
+
+[data-theme="liquid-glass"] .ap {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  border-radius: 14px;
+  padding: 4px 14px;
+  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.35), inset -2px -2px 3px rgba(255, 255, 255, 0.04);
+}
+
+[data-theme="liquid-glass"] .ap__play {
+  color: #e2e4e9;
+  transition: color 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+[data-theme="liquid-glass"] .ap__play:hover {
+  color: #7390c8;
+}
+
+[data-theme="liquid-glass"] .ap__time {
+  color: #8b8fa5;
+}
+
+[data-theme="liquid-glass"] .ap__progress {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.3), inset -1px -1px 2px rgba(255, 255, 255, 0.03);
+}
+
+[data-theme="liquid-glass"] .ap__progress-fill {
+  background: #7390c8;
+  border-radius: 6px;
+}
+
+[data-theme="liquid-glass"] .ap__volume-input {
+  accent-color: #7390c8;
+}
+
+/* ---------- LIQUID GLASS: about, skills — стекло убрано ---------- */
+
+[data-theme="liquid-glass"] .about__content {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-radius: 0;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+
+[data-theme="liquid-glass"] .skills__grid {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-radius: 0;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+
+/* ---------- LIQUID GLASS: footer ---------- */
+
+[data-theme="liquid-glass"] .footer {
+  color: #8b8fa5;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-radius: 0;
+  margin: 0;
+  border: none;
+  box-shadow: none;
+}
+
+/* ---------- LIQUID GLASS: scrollbar ---------- */
+
+[data-theme="liquid-glass"] ::-webkit-scrollbar {
+  width: 8px;
+}
+
+[data-theme="liquid-glass"] ::-webkit-scrollbar-track {
+  background: rgba(12, 13, 20, 0.6);
+}
+
+[data-theme="liquid-glass"] ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+}
+
+[data-theme="liquid-glass"] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
